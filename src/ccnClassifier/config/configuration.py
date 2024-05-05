@@ -1,6 +1,6 @@
-from src.ccnClassifier.constants import *
-from src.ccnClassifier.utils.common import read_yaml,create_directories
-from src.ccnClassifier.entity.config_entity import (Dataingestionconfig,Preparebasemodelconfig,Trainingconfig)
+from ccnClassifier.constants import *
+from ccnClassifier.utils.common import read_yaml,create_directories
+from ccnClassifier.entity.config_entity import (Dataingestionconfig,Preparebasemodelconfig,Trainingconfig,EvaluationConfig)
 import os
 
 class ConfigurationManager:
@@ -68,3 +68,13 @@ class ConfigurationManager:
             )
         
         return training_config
+    def get_evaluation_config(self)->EvaluationConfig:
+        eval_config=EvaluationConfig(path_of_model="artifacts/training/model.h5",
+                                    training_data="artifacts/data_ingestion/kidney-ct-scan-image",
+                                    mlflow_uri="https://dagshub.com/deepakrajbhar363/kidney-deasies-prediction.mlflow",
+                                    all_params=self.params,
+                                    params_image_size=self.params.IMAGE_SIZE,
+                                    params_batch_size=self.params.BATCH_SIZE
+                                    )
+        return eval_config
+    

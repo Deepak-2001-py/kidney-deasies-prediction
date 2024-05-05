@@ -1,7 +1,7 @@
 
-from src.ccnClassifier.config.configuration import ConfigurationManager
-from src.ccnClassifier.components.Preparebasedmodel import Preparebasedmodel
-from src.ccnClassifier import logger
+from ccnClassifier.config.configuration import ConfigurationManager
+from ccnClassifier.components.Preparebasedmodel import Preparebasedmodel
+from ccnClassifier import logger
 
 
 

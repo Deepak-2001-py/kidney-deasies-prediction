@@ -1,26 +1,26 @@
 from ccnClassifier.config.configuration import ConfigurationManager
-from ccnClassifier.components.Trainng import Training
+from ccnClassifier.components.Evaluation import Evaluation
 from ccnClassifier import logger
 
 
-class Trainingpipeline:
+class Evaluationpipeline:
     def __init__(self):
         pass
     
     def main(self):
         config = ConfigurationManager()
-        training_config = config.get_training_config()
-        training = Training(config=training_config)
-        training.get_base_model()
-        training.train_valid_generator()
-        training.train()
+        evaluation_config = config.get_evaluation_config()
+        evaluation = Evaluation(config=evaluation_config)
+        evaluation.evaluation()
+        # evaluation.log_into_mlflow()
+      
     
 print("*************************")
-STAGE_NAME="Traning Base Model"
+STAGE_NAME="Model Evaluation"
 if __name__=="__main__":
     try:
         logger.info(f">>>>> stage {STAGE_NAME} started <<<<<<")
-        obj=Trainingpipeline()
+        obj=Evaluationpipeline()
         obj.main()
         logger.info(f">>>>> stage {STAGE_NAME} completed <<<<<<")
         

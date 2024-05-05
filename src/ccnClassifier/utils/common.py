@@ -1,7 +1,7 @@
 import os
 from box.exceptions import BoxValueError
 import yaml
-from src.ccnClassifier import logger
+from ccnClassifier import logger
 import json
 import joblib
 from ensure import ensure_annotations
@@ -60,7 +60,7 @@ def save_json(path:Path,data:dict):
         data (dict): data to be saved in json file
     """
     with open(path,"w") as f:
-        json.dump(f)
+        json.dump(data,f,indent=4)
         
     logger.info(f"json file saved at:{path}")
     

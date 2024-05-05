@@ -1,7 +1,7 @@
 
-from src.ccnClassifier.config.configuration import ConfigurationManager
-from src.ccnClassifier.components.data_ingestion import DataIngestion
-from src.ccnClassifier import logger
+from ccnClassifier.config.configuration import ConfigurationManager
+from ccnClassifier.components.data_ingestion import DataIngestion
+from ccnClassifier import logger
 
 
  
