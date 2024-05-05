@@ -62,7 +62,7 @@ class ConfigurationManager:
             training_data=Path(os.path.join(training_data.unzip_dir,"kidney-ct-scan-image")),
             params_epochs=params.EPOCHES,
             params_batch=params.BATCH_SIZE,
-            params_is_augmentation=params.AUGNENTATION,
+            params_is_augmentation=params.AUGMENTATION,
             params_image_size=params.IMAGE_SIZE
             
             )
