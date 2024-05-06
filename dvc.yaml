@@ -37,9 +37,9 @@ stages:
       - artifacts/training/model.h5
 
   evaluation:
-    cmd: python src/ccnClassifier/pipeline/Evaluation.py
+    cmd: python src/ccnClassifier/pipeline/stage_04_evaluation.py
     deps:
-      - src/ccnClassifier/pipeline/Evaluation.py
+      - src/ccnClassifier/pipeline/stage_04_evaluation.py
       - config/config.yaml
       - artifacts/data_ingestion/kidney-ct-scan-image
       - artifacts/training/model.h5
@@ -48,5 +48,5 @@ stages:
       - BATCH_SIZE
 
     metrics:
-      - scores_json:
+      - scores.json:
           cache: false
